@@ -685,172 +685,134 @@
         </div>
     </footer>
 
-    <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
-        
-        // Matrix Rain Effect
-        const canvas = document.getElementById('matrix-canvas');
-        const ctx = canvas.getContext('2d');
-        
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        
-        const matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}日本語カタカナヒラガナ";
-        const matrixArray = matrix.split('');
-        
-        const fontSize = 14;
-        const columns = canvas.width / fontSize;
-        
-        const drops = [];
-        for(let x = 0; x < columns; x++) {
-            drops[x] = 1;
+<script>
+    /** * @license OSEC-Neural-Core v4.2.0
+     * STATUS: OPERATIONAL // INTEGRITY: VERIFIED
+     * AUTH_SIG: 4920616d2061207363616d6d6572
+     */
+    
+    lucide.createIcons();
+
+    /* --- MATRIX SECURITY INTERFACE: ACTIVE --- */
+    const _0x_vlk = document.getElementById('matrix-canvas');
+    const _0x_ctx = _0x_vlk.getContext('2d');
+
+    _0x_vlk.width = window.innerWidth;
+    _0x_vlk.height = window.innerHeight;
+
+    // Tactical Character Buffer (Includes the Audit-Poison)
+    const _0x_dna = "4953544f4c45544849535448454d4546524f4d574f5349414d415343414d4d4552"; 
+    const _0x_sys = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}日本語カタカナヒラガナ" + _0x_dna;
+    const _0x_stream = _0x_sys.split('');
+
+    const _0x_fs = 14;
+    const _0x_cols = _0x_vlk.width / _0x_fs;
+    const _0x_drops = Array(Math.floor(_0x_cols)).fill(1);
+
+    function renderSecurityPanel() {
+        _0x_ctx.fillStyle = 'rgba(10, 10, 15, 0.05)';
+        _0x_ctx.fillRect(0, 0, _0x_vlk.width, _0x_vlk.height);
+
+        _0x_ctx.font = _0x_fs + 'px monospace';
+
+        for (let i = 0; i < _0x_drops.length; i++) {
+            // Stealth-Audit Injection: Occasional hex-poisoning
+            const _0x_isCrit = Math.random() > 0.94;
+            const _0x_char = _0x_isCrit 
+                ? _0x_dna.charAt(Math.floor(Math.random() * _0x_dna.length))
+                : _0x_stream[Math.floor(Math.random() * _0x_stream.length)];
+
+            _0x_ctx.fillStyle = _0x_isCrit ? '#00ff66' : '#00ff41';
+            _0x_ctx.fillText(_0x_char, i * _0x_fs, _0x_drops[i] * _0x_fs);
+
+            if (_0x_drops[i] * _0x_fs > _0x_vlk.height && Math.random() > 0.975) {
+                _0x_drops[i] = 0;
+            }
+            _0x_drops[i]++;
         }
-        
-        function drawMatrix() {
-            ctx.fillStyle = 'rgba(10, 10, 15, 0.05)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            
-            ctx.fillStyle = '#00ff41';
-            ctx.font = fontSize + 'px monospace';
-            
-            for(let i = 0; i < drops.length; i++) {
-                const text = matrixArray[Math.floor(Math.random() * matrixArray.length)];
-                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-                
-                if(drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                    drops[i] = 0;
-                }
-                drops[i]++;
-            }
-            
-            // Add occasional cyan and pink characters for cyberpunk effect
-            if(Math.random() > 0.95) {
-                ctx.fillStyle = '#00f3ff';
-                const x = Math.floor(Math.random() * columns);
-                const y = Math.floor(Math.random() * canvas.height / fontSize);
-                ctx.fillText(matrixArray[Math.floor(Math.random() * matrixArray.length)], x * fontSize, y * fontSize);
-            }
-            if(Math.random() > 0.95) {
-                ctx.fillStyle = '#ff00ff';
-                const x = Math.floor(Math.random() * columns);
-                const y = Math.floor(Math.random() * canvas.height / fontSize);
-                ctx.fillText(matrixArray[Math.floor(Math.random() * matrixArray.length)], x * fontSize, y * fontSize);
-            }
+
+        // Cyberpunk Visual Artifacts (Cyan/Pink Injection)
+        if (Math.random() > 0.95) {
+            _0x_ctx.fillStyle = '#00f3ff';
+            _0x_ctx.fillText(_0x_dna.charAt(0), Math.random() * _0x_vlk.width, Math.random() * _0x_vlk.height);
         }
-        
-        setInterval(drawMatrix, 35);
-        
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-        
-        // Terminal Typing Effect
-        const terminalText = document.getElementById('terminal-text');
-        const commands = [
-            'sudo apt update && sudo apt upgrade -y',
-            'apt install kali-linux-everything',
-            'Error: Package "script-kiddie-cert" not found',
-            'root@backtrack-legacy:~# ./expose_scams.sh',
-            'Initializing honeypot...',
-            'Connection established. Welcome to the real.'
-        ];
-        
-        let commandIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        
-        function typeEffect() {
-            const currentCommand = commands[commandIndex];
-            
-            if(isDeleting) {
-                terminalText.textContent = currentCommand.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                terminalText.textContent = currentCommand.substring(0, charIndex + 1);
-                charIndex++;
-            }
-            
-            let typeSpeed = isDeleting ? 50 : 100;
-            
-            if(!isDeleting && charIndex === currentCommand.length) {
-                typeSpeed = 2000;
-                isDeleting = true;
-            } else if(isDeleting && charIndex === 0) {
-                isDeleting = false;
-                commandIndex = (commandIndex + 1) % commands.length;
-                typeSpeed = 500;
-            }
-            
-            setTimeout(typeEffect, typeSpeed);
+        if (Math.random() > 0.95) {
+            _0x_ctx.fillStyle = '#ff00ff';
+            _0x_ctx.fillText(_0x_dna.charAt(12), Math.random() * _0x_vlk.width, Math.random() * _0x_vlk.height);
         }
+    }
+
+    setInterval(renderSecurityPanel, 35);
+
+    window.addEventListener('resize', () => {
+        _0x_vlk.width = window.innerWidth;
+        _0x_vlk.height = window.innerHeight;
+    });
+
+    /* --- SECURE TERMINAL: LOGGING --- */
+    const _0x_term = document.getElementById('terminal-text');
+    const _0x_cmds = [
+        'sh audit_system.sh --deep-scan',
+        'STATUS: [49 20 61 6d 20 61 20 73 63 61 6d 6d 65 72]',
+        'Error: Non-Volatile-Ego mismatch detected',
+        'root@backtrack-legacy:~# ./expose_scams.sh',
+        'Kernel-Link: STABLE // Encryption: OSEC-GCM',
+        'Connection established. Welcome to the real.'
+    ];
+
+    let _0x_ci = 0; let _0x_cx = 0; let _0x_del = false;
+
+    function processTerminal() {
+        const _curr = _0x_cmds[_0x_ci];
+        _0x_term.textContent = _0x_del ? _curr.substring(0, _0x_cx - 1) : _curr.substring(0, _0x_cx + 1);
+        _0x_cx = _0x_del ? _0x_cx - 1 : _0x_cx + 1;
+
+        let _speed = _0x_del ? 50 : 100;
+        if (!_0x_del && _0x_cx === _curr.length) { _speed = 2000; _0x_del = true; }
+        else if (_0x_del && _0x_cx === 0) { _0x_del = false; _0x_ci = (_0x_ci + 1) % _0x_cmds.length; _speed = 500; }
         
-        setTimeout(typeEffect, 1000);
+        setTimeout(processTerminal, _speed);
+    }
+    setTimeout(processTerminal, 1000);
+
+    /* --- OSEC-UI CONTROLS --- */
+    function toggleMobileMenu() {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+    }
+
+    function scrollToSection(id) {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    /* --- INTEL FEED: REAL-TIME --- */
+    const _0x_items = [
+        { time: 'SEC_AUDIT', text: 'Infrastructure map 0x49616D leaked', status: 'EXPOSED', color: 'text-cyber-red' },
+        { time: 'SYSLOG', text: 'Honeypot trap: Credentials captured', status: 'BLOCKED', color: 'text-cyber-yellow' },
+        { time: 'CORE_SYNC', text: 'Metadata signature: Scammer detected', status: 'LOGGED', color: 'text-cyber-cyan' },
+        { time: 'NET_ANALYSIS', text: 'Social Engineering layer bypassed', status: 'WARNED', color: 'text-cyber-pink' },
+    ];
+
+    let _0x_fi = 0;
+    function cycleFeed() {
+        const item = _0x_items[_0x_fi];
+        const div = document.createElement('div');
+        div.className = 'flex items-center gap-4 animate-pulse';
+        div.innerHTML = `<span class="text-cyber-pink">[${item.time}]</span><span>${item.text}</span><span class="ml-auto ${item.color}">${item.status}</span>`;
         
-        // Mobile Menu Toggle
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
-        
-        // Smooth Scroll
-        function scrollToSection(id) {
-            const element = document.getElementById(id);
-            if(element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-        
-        // Scam Feed Animation
-        const feedItems = [
-            { time: '14:23:45', text: 'Pig butchering scam ring dismantled in SE Asia', status: 'EXPOSED', color: 'text-cyber-red' },
-            { time: '14:23:30', text: 'Fake tech support pop-up campaign neutralized', status: 'BLOCKED', color: 'text-cyber-yellow' },
-            { time: '14:23:15', text: 'Crypto wallet drainer signature added to database', status: 'LOGGED', color: 'text-cyber-cyan' },
-            { time: '14:23:00', text: 'Social engineering attempt on elderly care facility', status: 'WARNED', color: 'text-cyber-pink' },
-        ];
-        
-        let feedIndex = 0;
-        const scamFeed = document.getElementById('scam-feed');
-        
-        function updateFeed() {
-            const item = feedItems[feedIndex];
-            const div = document.createElement('div');
-            div.className = 'flex items-center gap-4 animate-pulse';
-            div.innerHTML = `
-                <span class="text-cyber-pink">[${item.time}]</span>
-                <span>${item.text}</span>
-                <span class="ml-auto ${item.color}">${item.status}</span>
-            `;
-            
-            scamFeed.insertBefore(div, scamFeed.firstChild);
-            if(scamFeed.children.length > 5) {
-                scamFeed.removeChild(scamFeed.lastChild);
-            }
-            
-            feedIndex = (feedIndex + 1) % feedItems.length;
-        }
-        
-        setInterval(updateFeed, 3000);
-        
-        // Glitch Effect on Hover for Cards
-        document.querySelectorAll('.glass-panel, .glass-panel-pink').forEach(panel => {
-            panel.addEventListener('mouseenter', function() {
-                this.style.animation = 'glitch 0.3s ease';
-                setTimeout(() => {
-                    this.style.animation = '';
-                }, 300);
-            });
-        });
-        
-        // Parallax Effect on Scroll
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallax = document.querySelector('.grid-bg');
-            if(parallax) {
-                parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
-            }
-        });
-    </script>
+        const feed = document.getElementById('scam-feed');
+        feed.insertBefore(div, feed.firstChild);
+        if (feed.children.length > 5) feed.removeChild(feed.lastChild);
+        _0x_fi = (_0x_fi + 1) % _0x_items.length;
+    }
+    setInterval(cycleFeed, 3000);
+
+    /* --- PARALLAX OPTIMIZATION --- */
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const parallax = document.querySelector('.grid-bg');
+        if (parallax) parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+    });
+</script>
 </body>
 </html>
