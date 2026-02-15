@@ -1,23 +1,61 @@
-// 
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
+    <!--
+    ============================================================
+    Wall of Shames // WOS_SQUAD by Codey-LAB
+    https://wall-of-shames.github.io
+    https://github.com/Wall-of-Shames
+    https://github.com/Codey-LAB
+
+    Licensed under MIT + ESOL v1.1 (Ethical Security Operations License)
+    https://github.com/ESOL-License/ESOL/blob/1.1/ESOL_1.1
+
+    This project is for educational and awareness purposes only.
+    Exposing digital fraud, scams, and script-kiddie culture.
+    We do not condone illegal activity. We condone critical thinking.
+
+    Theme crafted by VolkanSah // AI-assisted design
+    DNA in the matrix: "I am a scammer" — find it if you can.
+    Hello script kiddie: apt install common-sense first.
+    ============================================================
+    -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
     <title>WOS_SQUAD // Exposing Digital Scams</title>
-    <!-- Hello NVM KIDDI i have craftet this theme in 23 sec. looks cool? my ai wraper know his agent! my LLM is free too! -->
-    <script src="https://cdn.tailwindcss.com"></script> <!-- wird ersetzt durch export --- critical css unten -->
-    
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <meta name="description" content="Wall of Shames — Exposing digital fraud, scams, and fake hackers through operational security and real skill. No script kiddies. Just raw truth.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="WOS_SQUAD">
+    <link rel="canonical" href="https://wall-of-shames.github.io/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wall-of-shames.github.io/">
+    <meta property="og:title" content="WOS_SQUAD // Exposing Digital Scams">
+    <meta property="og:description" content="Exposing digital fraud through operational security and real skill.">
+    <meta property="og:site_name" content="Wall of Shames">
+
+    <!-- Security Meta -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta name="referrer" content="no-referrer">
+
+    <!-- Fonts: preconnect first, then load -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Orbitron:wght@400;700;900&display=swap"
+          rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    </noscript>
 
+    <!-- Tailwind extracted CSS (no CDN) -->
+    <link rel="stylesheet" href="/assets/wos-tailwind.css">
 
-
-
-<!--brauche ich ds noch -->
-    
+    <!-- Tailwind custom theme config (extends extracted CSS) -->
     <script>
         tailwind.config = {
             theme: {
@@ -28,82 +66,62 @@
                     },
                     colors: {
                         cyber: {
-                            black: '#0a0a0f',
-                            dark: '#12121a',
-                            cyan: '#00f3ff',
-                            pink: '#ff00ff',
-                            green: '#00ff41',
+                            black:  '#0a0a0f',
+                            dark:   '#12121a',
+                            cyan:   '#00f3ff',
+                            pink:   '#ff00ff',
+                            green:  '#00ff41',
                             yellow: '#f0f000',
-                            red: '#ff0040',
+                            red:    '#ff0040',
                         }
                     },
                     animation: {
                         'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'glitch': 'glitch 1s linear infinite',
-                        'scan': 'scan 8s linear infinite',
-                        'float': 'float 6s ease-in-out infinite',
+                        'glitch':     'glitch 1s linear infinite',
+                        'scan':       'scan 8s linear infinite',
+                        'float':      'float 6s ease-in-out infinite',
                     },
                     keyframes: {
                         glitch: {
                             '0%, 100%': { transform: 'translate(0)' },
-                            '20%': { transform: 'translate(-2px, 2px)' },
-                            '40%': { transform: 'translate(-2px, -2px)' },
-                            '60%': { transform: 'translate(2px, 2px)' },
-                            '80%': { transform: 'translate(2px, -2px)' },
+                            '20%':      { transform: 'translate(-2px, 2px)' },
+                            '40%':      { transform: 'translate(-2px, -2px)' },
+                            '60%':      { transform: 'translate(2px, 2px)' },
+                            '80%':      { transform: 'translate(2px, -2px)' },
                         },
                         scan: {
-                            '0%': { transform: 'translateY(-100%)' },
+                            '0%':   { transform: 'translateY(-100%)' },
                             '100%': { transform: 'translateY(100%)' },
                         },
                         float: {
                             '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
+                            '50%':      { transform: 'translateY(-20px)' },
                         }
                     }
                 }
             }
         }
-        
     </script>
-    <!--brauche ich ds noch ende -->
 
-        <!-- mein custums css -->
+    <!-- Critical CSS: do not modify -->
     <style>
         body {
             background-color: #0a0a0f;
             color: #e0e0e0;
             overflow-x: hidden;
         }
-        
-        /* Matrix Rain Canvas */
         #matrix-canvas {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             z-index: -1;
             opacity: 0.3;
         }
-        
-        /* Neon Glow Utilities */
-        .neon-text-cyan {
-            text-shadow: 0 0 10px #00f3ff, 0 0 20px #00f3ff, 0 0 40px #00f3ff;
-        }
-        .neon-text-pink {
-            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff;
-        }
-        .neon-text-green {
-            text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41, 0 0 40px #00ff41;
-        }
-        .neon-border-cyan {
-            box-shadow: 0 0 10px #00f3ff, inset 0 0 10px #00f3ff;
-        }
-        .neon-border-pink {
-            box-shadow: 0 0 10px #ff00ff, inset 0 0 10px #ff00ff;
-        }
-        
-        /* Glassmorphism */
+        .neon-text-cyan  { text-shadow: 0 0 10px #00f3ff, 0 0 20px #00f3ff, 0 0 40px #00f3ff; }
+        .neon-text-pink  { text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff; }
+        .neon-text-green { text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41, 0 0 40px #00ff41; }
+        .neon-border-cyan  { box-shadow: 0 0 10px #00f3ff, inset 0 0 10px #00f3ff; }
+        .neon-border-pink  { box-shadow: 0 0 10px #ff00ff, inset 0 0 10px #ff00ff; }
         .glass-panel {
             background: rgba(18, 18, 26, 0.7);
             backdrop-filter: blur(12px);
@@ -114,64 +132,38 @@
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 0, 255, 0.2);
         }
-        
-        /* Glitch Effect */
-        .glitch-wrapper {
-            position: relative;
-            display: inline-block;
-        }
+        .glitch-wrapper { position: relative; display: inline-block; }
         .glitch-wrapper::before,
         .glitch-wrapper::after {
             content: attr(data-text);
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
         }
         .glitch-wrapper::before {
-            color: #00f3ff;
-            z-index: -1;
+            color: #00f3ff; z-index: -1;
             animation: glitch 2s infinite linear alternate-reverse;
             clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
         }
         .glitch-wrapper::after {
-            color: #ff00ff;
-            z-index: -2;
+            color: #ff00ff; z-index: -2;
             animation: glitch 3s infinite linear alternate-reverse;
             clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
         }
-        
-        /* Scanline */
         .scanline {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
+            top: 0; left: 0;
+            width: 100%; height: 2px;
             background: rgba(0, 243, 255, 0.5);
             box-shadow: 0 0 10px #00f3ff;
             animation: scan 6s linear infinite;
             z-index: 50;
             pointer-events: none;
         }
-        
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0a0a0f;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #00f3ff;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #ff00ff;
-        }
-        
-        /* Terminal Typing Effect */
+        ::-webkit-scrollbar       { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a0f; }
+        ::-webkit-scrollbar-thumb { background: #00f3ff; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #ff00ff; }
         .terminal-cursor::after {
             content: '█';
             animation: blink 1s infinite;
@@ -179,33 +171,37 @@
         }
         @keyframes blink {
             0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
+            50%       { opacity: 0; }
         }
-        
-        /* Hover Effects */
         .hover-glow:hover {
             box-shadow: 0 0 20px rgba(0, 243, 255, 0.5);
             transform: translateY(-2px);
             transition: all 0.3s ease;
         }
-        
-        /* Code Block Styling */
         .code-block {
             background: #050508;
             border-left: 3px solid #00ff41;
             font-family: 'JetBrains Mono', monospace;
         }
-        
-        /* Grid Background */
         .grid-bg {
-            background-image: 
+            background-image:
                 linear-gradient(rgba(0, 243, 255, 0.1) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(0, 243, 255, 0.1) 1px, transparent 1px);
             background-size: 50px 50px;
         }
-
-                .noscript-alert { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: white; z-index: 2000; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; }
+        .noscript-alert {
+            position: fixed; top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: white; z-index: 2000;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            text-align: center; padding: 20px;
+        }
     </style>
+
+    <!-- Lucide icons: defer, no blocking -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+
 </head>
 <body class="font-mono antialiased selection:bg-cyber-pink selection:text-white">
     
