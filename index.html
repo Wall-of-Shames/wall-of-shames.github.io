@@ -199,11 +199,19 @@
         }
     </style>
 
-    <!-- Lucide icons: defer, no blocking -->
-    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <!-- Lucide icons: defer, no blocking
+    <script src="https://unpkg.com/lucide@latest" defer></script> -->
 
 </head>
 <body class="font-mono antialiased selection:bg-cyber-pink selection:text-white">
+
+    <!-- NICHT im <head> mit defer -->
+
+<!-- Direkt vor </body> -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+    lucide.createIcons();
+</script>
     
         <noscript>
         <div class="noscript-alert">
